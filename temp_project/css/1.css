@@ -1,0 +1,21 @@
+td, th {
+            min-width: 3em;
+            padding: 0.4em;
+            text-align: left;
+        }
+
+        th {
+            background-color: aquamarine;
+        }
+
+        .evenRow {
+            background-color: #e5ffef;
+        }
+
+        .oddRow {
+            background-color: #fef3ff;
+        }
+
+        .leftP {
+
+        }

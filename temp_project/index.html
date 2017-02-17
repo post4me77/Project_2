@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-ng-app="myApp">
+<head>
+<link rel="stylesheet" type="text/css" href="css/1.css">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js "></script>
+    <script src="js/tableController.js"></script>
+    </style>
+</head>
+<body>
+<div data-ng-controller="filmCtrl" data-ng-init="selection='Films'">
+
+        <div class="leftDiv">
+           <label>
+                   <input type="radio" data-ng-model="selection" value="Films" name="modes" >
+                   Films
+               </label>
+            <label>
+                <input type="radio" data-ng-model="selection" value="Anime" name="modes">
+                Anime
+            </label>
+        </div>
+
+
+    <p class="leftP">Search: &nbsp; <input type="text" data-ng-model="search">    </p>
+
+
+    <div ng-switch on="selection">
+         <div ng-switch-when="Films">
+              <table>
+                   <tr>
+                        <th>№</th>
+                        <th>Title</th>
+                        <th>Director</th>
+                        <th>Year</th>
+                        <th>Duration</th>
+                        <th>Type</th>
+                        <th>Price</th>
+                    </tr>
+                <tr  data-ng-repeat="f in filmsinfo | filter:search | orderBy : 'name'" data-ng-class="{evenRow:$even,oddRow:$odd}">
+                    <td>{{$index + 1}}</td>
+                    <td>{{f.name}}</td>
+                    <td>{{f.director}}</td>
+                    <td>{{f.year}}</td>
+                    <td>{{f.duration + ' min'}}</td>
+                    <td>{{f.type}}</td>
+                    <td>{{f.price | currency}}</td>
+                 </tr>
+              </table>
+         </div>
+         <div ng-switch-when="Anime">
+             <table>
+                 <tr>
+                     <th>№</th>
+                     <th>Title</th>
+                     <th>Director</th>
+                     <th>Year</th>
+                     <th>Duration</th>
+                     <th>Type</th>
+                     <th>Price</th>
+                </tr>
+                <tr data-ng-repeat="f in anime | filter:search | orderBy : 'name'" data-ng-class="{evenRow:$even,oddRow:$odd}">
+                    <td>{{$index + 1}}</td>
+                    <td>{{f.name}}</td>
+                    <td>{{f.director}}</td>
+                    <td>{{f.year}}</td>
+                    <td>{{f.duration + ' min'}}</td>
+                    <td>{{f.type}}</td>
+                    <td>{{f.price | currency}}</td>
+                </tr>
+             </table>
+         </div>
+        <div ng-switch-default>
+            Choose something
+        </div>
+
+
+    </div>
+
+
+</div>
+</body>
+</html>
