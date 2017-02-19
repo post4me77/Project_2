@@ -35,13 +35,13 @@ module.exports = function(grunt){
     },
     exec: {
       server: {
-        cmd: 'python -m SimpleHTTPServer'
+        cmd: 'http-server ./ &'
       },
       jenkins_start: {
-        cmd: 'sudo /etc/init.d/jenkins start'
+        cmd: 'sudo /etc/init.d/jenkins start &'
       },
       jenkins_stop: {
-        cmd: 'sudo /etc/init.d/jenkins stop'
+        cmd: 'sudo /etc/init.d/jenkins stop &'
       },
       mocha: {
         cmd: 'mocha ./specs/*.js'
@@ -60,6 +60,14 @@ module.exports = function(grunt){
     grunt.task.run([
       'default',
       'exec:mocha'
+    ]);
+  });
+
+  grunt.registerTask('server', function() {
+    grunt.task.run([
+      'exec:server',
+      'watch:js',
+      'watch:css'
     ]);
   });
 

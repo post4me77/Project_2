@@ -8,7 +8,7 @@ myApp.controller('filmCtrl', function($scope){
        name:"Avatar",
        director:"James Cameron",
        type:"Blu-ray/DVD",
-       year:2010,
+       year:2014,
        duration:324,
        price:2.95
    }, {
