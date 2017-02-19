@@ -1,10 +1,10 @@
 var assert = require('assert'),
     test = require('selenium-webdriver/testing'),
     webdriver = require('selenium-webdriver');
-var chrome = require('selenium-webdriver/chrome');
-var path = require('chromedriver').path;
+
 var fs = require('fs');
 
+require('chromedriver');
 
 function writeScreenshot(data, name) {
   name = name || 'ss.png';
