@@ -34,16 +34,14 @@ module.exports = function(grunt){
       }
     },
     exec: {
-      remove_logs: {
-        command: 'rm -f *.log',
-        stdout: false,
-        stderr: false
-      },
-      list_files: {
-        cmd: 'ls -l **'
-      },
       server: {
         cmd: 'python -m SimpleHTTPServer'
+      },
+      jenkins_start: {
+        cmd: 'sudo /etc/init.d/jenkins start'
+      },
+      jenkins_stop: {
+        cmd: 'sudo /etc/init.d/jenkins stop'
       },
       mocha: {
         cmd: 'mocha ./specs/*.js'
@@ -64,4 +62,7 @@ module.exports = function(grunt){
       'exec:mocha'
     ]);
   });
+
+  grunt.registerTask('jenkins:start', ['exec:jenkins_start']);
+  grunt.registerTask('jenkins:stop', ['exec:jenkins_stop']);
 };

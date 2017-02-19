@@ -1,7 +1,16 @@
 Run server
 https://mochajs.org/
 https://mochajs.org/#timeouts
+https://gist.github.com/calebhaye/9258126
+https://www.npmjs.com/package/pre-push
+http://softwareengineering.stackexchange.com/questions/260778/is-it-a-good-practice-to-run-unit-tests-in-version-control-hooks
+
+https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu
+https://github.com/jenkinsci/pipeline-plugin
 
 npm install
 
+default config: gvim /etc/default/jenkins
 grunt test:integration
+
+sudo /etc/init.d/jenkins start / stop
