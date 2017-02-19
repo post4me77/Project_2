@@ -1,2 +1,7 @@
 Run server
-python -m SimpleHTTPServer
+https://mochajs.org/
+https://mochajs.org/#timeouts
+
+npm install
+
+grunt test:integration
