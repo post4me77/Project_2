@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "bsnigirev",
   "license": "ISC",
   "dependencies": {
     "chromedriver": "^2.27.3",
@@ -15,6 +15,7 @@
     "selenium-webdriver": "^3.1.0"
   },
   "devDependencies": {
+    "chai": "^3.5.0",
     "grunt": "^1.0.1",
     "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-jshint": "^1.1.0",
@@ -24,6 +25,7 @@
     "grunt-loadnpmtasks": "^0.3.4",
     "grunt-selenium-standalone": "^1.0.1",
     "grunt-serve": "^0.1.6",
+    "mocha": "^3.2.0",
     "selenium-webdriver": "^3.1.0"
   }
 }
