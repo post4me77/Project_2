@@ -22,7 +22,7 @@ module.exports = function(grunt){
       }
     },
     jshint: {
-      files: ['Gruntfile.js', 'specs/*.js', 'js/*.js'],
+      files: ['Gruntfile.js', 'specs/**/*_test.js', 'js/*.js'],
       options: {
         // options here to override JSHint defaults
         globals: {
@@ -44,7 +44,7 @@ module.exports = function(grunt){
         cmd: 'sudo /etc/init.d/jenkins stop &'
       },
       mocha: {
-        cmd: 'mocha ./specs/*.js'
+        cmd: 'mocha ./specs/**/*_test.js'
       }
     }
   });
